@@ -1,0 +1,18 @@
+component EthNicEnc28j60Dev {
+	hardware;
+	/* There is no MMIO: the registers are accessed through the
+	 * SPI commands.
+	 */
+
+	/* The IRQ will likely be wired through a GPIO pin signal. */
+}
+
+component EthNicEnc28j60Drv {
+	consumes GpioIrq irq0;
+
+	composition {
+		component EthNicEnc28j60Dev eth_nic;
+	}
+	configuration {
+	}
+}
